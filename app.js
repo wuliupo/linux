@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const categories = [];
-let contents = '# [Linux Command](./)\n## ??'; // ??
+let contents = '# [Linux Command](./)\n';
 const commands = [];
 const images = [];
 
@@ -102,13 +102,13 @@ const crawlSubCategory = () => {
             fs.writeFileSync(filename, `${JSON.stringify(commands, null, 4)}`);
             console.log(`create command.json -> OK!`);
 
-            // ?? Markdown ??
+            // Markdown content
             categories.forEach(category => {
                 contents += `1. ${category.title}\n`;
                 category.category.forEach(category2 => {
                     contents += `  1. ${category2.title}\n`;
                     category2.category.forEach(category3 => {
-                        contents += `    1. [${category3.desc}](#${category3.title})\n`;
+                        contents += `    1. [${category3.title}: ${category3.desc}](#command/${category3.title})\n`;
                     });
                 });
             });
@@ -172,7 +172,7 @@ const crawlCommand = () => {
 }
 
 const crawlImages = () => {
-    return new Promise(() => {
+    return new Promise(resolve => {
         console.log('start crawl images.');
 
         const c = new Crawler({

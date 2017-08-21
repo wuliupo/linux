@@ -5,7 +5,7 @@
   "author": "Philip Ding <cheng.ding@wz-inc.com>",
   "private": true,
   "scripts": {
-    "crawl": "app.js"
+    "crawl": "node app.js"
   },
   "devDependencies": {
     "bluebird": "^3.5.0",
