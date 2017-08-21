@@ -1,21 +1,9 @@
-# linux-command
+# Linux命令大全搜索工具
 
-> A Vue.js project
+## Linux命令手册、详解、学习、搜集
 
-## Build Setup
+520 多个 Linux 命令大全，内容包含 Linux 命令手册、详解、学习，值得收藏的 Linux 命令速查手册。数据来自： <http://man.linuxde.net/>
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Git 项目
+- <https://github.com/jaywcjlove/linux-command/>
+- <https://github.com/philipding/linux-command/>

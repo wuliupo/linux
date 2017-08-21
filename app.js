@@ -5,6 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const categories = [];
+const contents = '# [JS ??????](./)\n## ??'; // ??
 const commands = [];
 const images = [];
 
@@ -92,14 +93,29 @@ const crawlSubCategory = () => {
         c.queue(links);
 
         c.on('drain', function() {
-            let filename  = path.join(__dirname, 'command', 'category.js');
-            let str = `export default ${JSON.stringify(categories, null, 4)}`;
+            let filename  = path.join(__dirname, 'command', 'category.json');
+            let str = `${JSON.stringify(categories, null, 4)}`;
             fs.writeFileSync(filename, str);
-            console.log(`create category.js → OK!`);
+            console.log(`create category.json -> OK!`);
 
-            filename  = path.join(__dirname, 'command', 'command.js');
-            fs.writeFileSync(filename, `export default ${JSON.stringify(commands, null, 4)}`);
-            console.log(`create command.js → OK!`);
+            filename  = path.join(__dirname, 'command', 'command.json');
+            fs.writeFileSync(filename, `${JSON.stringify(commands, null, 4)}`);
+            console.log(`create command.json -> OK!`);
+
+            // ?? Markdown ??
+            categories.forEach(category => {
+                contents += `1. ${category.title}\n`;
+                category.category.forEach(category2 => {
+                    contents += `  1. ${category2.title}\n`;
+                    category2.category.forEach(category3 => {
+                        contents += `    1. [${category3.desc}](#${category3.title})\n`;
+                    });
+                });
+            });
+
+            filename  = path.join(__dirname, 'command', 'category.md');
+            fs.writeFileSync(filename, contents);
+            console.log(`create category.md -> OK!`);
 
             resolve();
         })
@@ -138,7 +154,7 @@ const crawlCommand = () => {
 
                     const filename  = path.join(__dirname, 'command', `${title}.md`);
                     fs.writeFileSync(filename, mdStr);
-                    console.log(`create ${title} → OK!`);
+                    console.log(`create ${title} -> OK!`);
                 }
 
                 done();
@@ -174,9 +190,9 @@ const crawlImages = () => {
                     const filename  = path.join(__dirname, 'command', 'images', name);
                     fs.writeFile(filename, res.body, function (err) {
                         if (err) {
-                            console.log(`create ${name} → error`);
+                            console.log(`create ${name} -> error`);
                         } else {
-                            console.log(`create ${name} → OK!`);
+                            console.log(`create ${name} -> OK!`);
                         }
                     });
                 }
@@ -194,34 +210,10 @@ const crawlImages = () => {
     });
 }
 
-const createComponents = () => {
-    return new Promise((resolve, reject) => {
-        console.log('start create component.');
-
-        const names = commands.map(c => c.title.replace('/', '_'));
-        let componentStr = 'var LCPlugin = {};\r\n';
-        componentStr += 'LCPlugin.install = function (Vue, options) {\r\n';
-
-        names.forEach(name => {
-            componentStr += `Vue.component('lc-${name}', function (resolve, reject) { require(['./${name}.md'], resolve) })\r\n`
-        });
-        componentStr += '}\r\n';
-        componentStr += 'export default LCPlugin';
-
-        const filename  = path.join(__dirname, 'command', `component.js`);
-        fs.writeFileSync(filename, componentStr);
-        console.log('create component → OK!');
-
-        console.log('end create component.');
-        resolve();
-    })
-}
-
 crawlCategory()
     .then(() => crawlSubCategory())
     .then(() => crawlCommand())
     .then(() => crawlImages())
-    .then(() => createComponents())
     .catch(e => {
         console.log(e);
     });

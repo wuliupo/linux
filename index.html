@@ -2,33 +2,34 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Linux命令搜索</title>
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?8a3d649281ab54da8a51736c992d4b15";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Linux命令搜索</title>
+  <link rel="stylesheet" href="../ditto/normalize.css">
+  <link rel="stylesheet" href="../ditto/app.css">
 </head>
 
 <body>
-    <div id="app"></div>
-    <script>
-        (function() {
-            if('serviceWorker' in navigator) {
-                if (window.location.hostname !== 'localhost') {
-                    navigator.serviceWorker.register('/linux-command/service-worker.js');
-                }
-            }
-        })();
-    </script>
+  <noscript>
+    <p>常用 Linux 命令</p>
+    <ol>
+        <li><a target="_blank" href="http://man.linuxde.net/">http://man.linuxde.net/</a></li>
+        <li><a target="_blank" href="https://philipding.github.io/linux-command/">https://philipding.github.io/linux-command/</a></li>
+        <li><a target="_blank" href="https://jaywcjlove.github.io/linux-command/"></a>https://jaywcjlove.github.io/linux-command/</li>
+    </ol>
+    <p>本书为中级难度，适合已有一定JavaScript语言基础的读者，了解这门语言的最新进展；也可当作参考手册，查寻新增的语法点。</p>
+  </noscript>
+  <script src="../ditto/jquery.min.js"></script>
+  <script src="../ditto/marked.js"></script>
+  <script src="../ditto/store.js"></script>
+  <script src="../ditto/ditto.js"></script>
+  <script src="../ditto/prism.js"></script>
+  <script src="config.js"></script>
+  <script>
+    ditto.run();
+  </script>
 </body>
 
 </html>
