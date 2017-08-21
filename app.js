@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const categories = [];
-const contents = '# [JS ??????](./)\n## ??'; // ??
+let contents = '# [Linux Command](./)\n## ??'; // ??
 const commands = [];
 const images = [];
 
