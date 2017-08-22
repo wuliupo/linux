@@ -28,7 +28,7 @@ OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1�
 
 事实上，OpenSSL提供的CA应用程序就是一个小型的证书管理中心（CA），实现了证书签发的整个流程和证书管理的大部分机制。
 
-### 实例  
+### 实例
 
 **1、消息摘要算法应用例子**
 
@@ -62,7 +62,7 @@ OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1�
 # openssl sha1 -sign rsaprivate.pem -out rsasign.bin file.txt
 ```
 
-# 用sha1算法验证file.txt的数字签名rsasign.bin，验证的public key为RSA算法生成的rsapublic.pem。
+用sha1算法验证file.txt的数字签名rsasign.bin，验证的public key为RSA算法生成的rsapublic.pem。
 
 ```
 # openssl sha1 -verify rsapublic.pem -signature rsasign.bin file.txt
