@@ -1,4 +1,4 @@
-# [Linux Command](./)
+# [Linux Command](#)
 ## Content List
 1. 系统管理
   1. 系统安全
