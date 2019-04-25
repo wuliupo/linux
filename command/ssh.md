@@ -23,9 +23,12 @@ ssh(选项)(参数)
 -i：指定身份文件；
 -l：指定连接远程服务器登录用户名；
 -N：不执行远程指令；
+-n：表示只连接远程主机，不打开远程shell；
 -o：指定配置选项；
 -p：指定远程服务器上的端口；
 -q：静默模式；
+-t：表示不为这个连接分配TTY；
+-tt：表示不为这个连接分配TTY；
 -X：开启X11转发功能；
 -x：关闭X11转发功能；
 -y：开启信任X11转发功能。
@@ -35,3 +38,8 @@ ssh(选项)(参数)
 
 *   远程主机：指定要连接的远程ssh服务器；
 *   指令：要在远程ssh服务器上执行的指令。
+
+### 示例
+
+- ```ssh root@172.1.1.1 '/usr/local/backup.sh 2 2 >/dev/null 2>&1 &'``` 执行远程备份操作，命令会在后台执行
+- ```ssh -tt  root@$172.1.1.1 -p 22 << remotessh```如果ssh没加tt参数（表示不为这个连接分配TTY，这里非得用两个tt才不会报错），可能会报Pseudo-terminal will not be allocated because stdin is not a terminal的错
