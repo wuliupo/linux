@@ -6,8 +6,8 @@ var CONFIG = {
   sidebar_file: "command/category.md",
 
   // where the docs are actually stored on github - so you can edit
-  base_url: "https://github.com/wuliupo/linux-command/edit/master",
-  git_url: "https://github.com/wuliupo/linux-command",
+  base_url: "https://github.com/wuliupo/linux/edit/master",
+  git_url: "https://github.com/wuliupo/linux",
 };
 
 // **************************
