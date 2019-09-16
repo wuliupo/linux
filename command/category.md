@@ -341,7 +341,7 @@
     1. [dd: 复制文件并对原文件的内容进行转换和格式化处理](#command/dd)
     1. [dirname: 去除文件名中的非目录部分](#command/dirname)
     1. [updatedb: 创建或更新slocate命令所必需的数据库文件](#command/updatedb)
-    1. [ln: 用来为文件创件连接](#command/ln)
+    1. [ln: 用来为文件创建连接](#command/ln)
     1. [cat: 连接文件并打印到标准输出设备上](#command/cat)
   1. 文件编辑
     1. [nano: 字符终端文本编辑器](#command/nano)

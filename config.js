@@ -1,4 +1,4 @@
-var CONFIG = {
+Object.assign(ditto, {
   // index page
   index: "README.md",
 
@@ -8,17 +8,8 @@ var CONFIG = {
   // where the docs are actually stored on github - so you can edit
   base_url: "https://github.com/wuliupo/linux/edit/master",
   git_url: "https://github.com/wuliupo/linux",
-};
 
-// **************************
-// DON'T EDIT FOLLOWING CODES
-// **************************
-
-addConfig(ditto, CONFIG);
-
-function addConfig(obj, conf) {
-  Object.keys(conf).forEach(function (key) {
-    obj[key] = conf[key];
-  });
-}
-
+  fixPath: function(paths) {
+    return paths.replace('./', '#command/');
+  }
+});

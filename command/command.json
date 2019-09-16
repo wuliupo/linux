@@ -1587,7 +1587,7 @@
     {
         "title": "ln",
         "link": "http://man.linuxde.net/ln",
-        "desc": "用来为文件创件连接"
+        "desc": "用来为文件创建连接"
     },
     {
         "title": "cat",
