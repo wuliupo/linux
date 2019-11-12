@@ -2020,6 +2020,11 @@
         "desc": "Linux下的归档使用工具，用来打包和备份。"
     },
     {
+        "title": "xz",
+        "link": "https://wangchujiang.com/linux-command/c/xz.html",
+        "desc": "POSIX 平台开发具有高压缩率的工具。"
+    },
+    {
         "title": "bunzip2",
         "link": "http://man.linuxde.net/bunzip2",
         "desc": "创一个bz2文件压缩包"
