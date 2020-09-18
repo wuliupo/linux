@@ -324,3 +324,12 @@ find . -path "./sk" -prune -o -name "*.txt" -print
 ```
 find . -empty
 ```
+
+#### 删除所有本地文件
+
+```bash
+find ~ -type d -name '.history' | xargs rm -rf
+find ~ -type d -name 'node_modules' | xargs rm -rf
+find ~ -type d -name 'target' | xargs rm -rf
+find ~ -type f -name '.DS_Store' | xargs rm -rf
+```

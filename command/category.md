@@ -445,6 +445,7 @@
     1. [rcp: 使在两台Linux主机之间的文件复制操作更简单](#command/rcp)
 1. 硬件 | 监测 | 内核 | Shell
   1. Shell内建命令
+    1. [特殊字符](#command/symbol)
     1. [sh: shell命令解释器](#command/sh)
     1. [trap: 指定在接收到信号后将要采取的动作](#command/trap)
     1. [let: 简单的计算器](#command/let)
